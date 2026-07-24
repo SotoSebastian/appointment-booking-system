@@ -12,4 +12,15 @@ class Servicio extends Model
         'duracion_minutos',
         'precio',
     ];
+    
+    public function negocio()
+    {
+        return $this->belongsTo(Negocio::class);
+    }
+
+    public function citas()
+    {
+        return $this->hasMany(Cita::class);
+    }
+
 }

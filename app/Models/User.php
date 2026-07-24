@@ -51,5 +51,14 @@ class User extends Authenticatable implements PasskeyUser
     'password',
     'rol',
     'negocio_id',
-];
+    ];
+    public function negocio()
+    {
+        return $this->belongsTo(Negocio::class);
+    }
+
+    public function citas()
+    {
+        return $this->hasMany(Cita::class, 'cliente_id');
+    }
 }

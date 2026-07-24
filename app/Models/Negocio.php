@@ -11,4 +11,14 @@ class Negocio extends Model
         'direccion',
         'telefono',
     ];
+    
+    public function servicios()
+    {
+        return $this->hasMany(Servicio::class);
+    }
+    
+    public function empleados()
+    {
+        return $this->hasMany(User::class);
+    }
 }

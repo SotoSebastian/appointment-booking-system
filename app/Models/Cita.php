@@ -14,4 +14,13 @@ class Cita extends Model
         'estado',
         'notas',
     ];
+    public function servicio()
+    {
+        return $this->belongsTo(Servicio::class);
+    }
+
+    public function cliente()
+    {
+        return $this->belongsTo(User::class, 'cliente_id');
+    }
 }
